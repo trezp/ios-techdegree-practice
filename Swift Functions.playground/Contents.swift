@@ -35,3 +35,32 @@ func sayHello(to person: String, and anotherPerson: String) ->String {
 }
 
 sayHello(to: "Pasan", and: "Gabe")
+
+
+func getRemainder(value a: Int, divisor b: Int) -> Int {
+    return a % b
+}
+
+getRemainder(value: 3333, divisor: 132)
+
+// Default Values
+
+func carpetCostCalculator(length length: Int, width: Int, carpetColor: String = "tan") -> Int {
+    //Gray Carpet = $1/sq ft
+    //Tan Carpet = $2/sq ft
+    //Deep Blue Carpet - $4/sq ft
+    let area = calculateArea(length, width: width)
+    var price: Int
+    
+    switch carpetColor {
+        case "gray": price = area * 1
+        case "tan": price = area * 2
+        case "blue": price = area * 4
+        default: price = 0
+    }
+    
+    return price
+}
+
+carpetCostCalculator(length: 10, width: 20)
+carpetCostCalculator(length: 13, width: 22, carpetColor: "blue")

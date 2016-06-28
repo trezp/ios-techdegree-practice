@@ -45,7 +45,7 @@ getRemainder(value: 3333, divisor: 132)
 
 // Default Values
 
-func carpetCostCalculator(length length: Int, width: Int, carpetColor: String = "tan") -> Int {
+func carpetCostCalculator(length length: Int, width: Int, carpetColor: String = "tan") -> (price: Int, carpetColor: String) {
     //Gray Carpet = $1/sq ft
     //Tan Carpet = $2/sq ft
     //Deep Blue Carpet - $4/sq ft
@@ -59,8 +59,32 @@ func carpetCostCalculator(length length: Int, width: Int, carpetColor: String = 
         default: price = 0
     }
     
-    return price
+    return (price, carpetColor)
 }
 
-carpetCostCalculator(length: 10, width: 20)
+let result = carpetCostCalculator(length: 10, width: 20)
 carpetCostCalculator(length: 13, width: 22, carpetColor: "blue")
+
+result.price
+result.carpetColor
+
+print("The carpet color you chose is \(result.carpetColor), and the price is $\(result.price).")
+
+// Function Scopre
+
+func countDownAndUp(a: Int){
+    var a = a
+    var b = a
+    
+    while b >= 0 {
+        b -= 1
+        a += 1
+        print("a: \(a)")
+        print("b: \(b)")
+    }
+}
+
+var a = 20
+countDownAndUp(5)
+
+a
